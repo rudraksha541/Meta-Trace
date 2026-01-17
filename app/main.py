@@ -547,4 +547,4 @@ async def explain_metadata(metadata: dict):
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
-app.include_router(explain_router)
+app.include_router(explain_router
