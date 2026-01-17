@@ -520,7 +520,7 @@ async def explain_metadata(metadata: dict):
             return JSONResponse(content={"error": "No metadata provided"}, status_code=400)
 
         metadata_str = json.dumps(metadata, indent=2)
-        GEMINI_API_KEY = "AIzaSyB1QiMcUVr8Yd2yy0M9bkAFwmfe9KXho9c"
+        GEMINI_API_KEY = ""
         genai.configure(api_key=GEMINI_API_KEY)
         model = genai.GenerativeModel("gemini-1.5-flash")
 
