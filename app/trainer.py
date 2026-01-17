@@ -35,6 +35,7 @@ print(f"✅ Accuracy: {acc:.4f}")
 print("📊 Classification Report:")
 print(classification_report(y_test, y_pred))
 
+
 # Save model to file
 MODEL_PATH = "tampering_rf_model.pkl"
 joblib.dump(rf_model, MODEL_PATH)
