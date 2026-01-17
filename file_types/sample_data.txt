@@ -1,0 +1,235 @@
+jayashre@Jayashre-2 file_types % exiftool audio.mp3 
+ExifTool Version Number         : 13.10
+File Name                       : audio.mp3
+Directory                       : .
+File Size                       : 66 kB
+File Modification Date/Time     : 2025:01:20 15:16:08+05:30
+File Access Date/Time           : 2025:01:20 15:16:08+05:30
+File Inode Change Date/Time     : 2025:01:20 15:16:18+05:30
+File Permissions                : -rw-r--r--
+File Type                       : MP3
+File Type Extension             : mp3
+MIME Type                       : audio/mpeg
+MPEG Audio Version              : 2
+Audio Layer                     : 3
+Audio Bitrate                   : 96 kbps
+Sample Rate                     : 22050
+Channel Mode                    : Single Channel
+MS Stereo                       : Off
+Intensity Stereo                : Off
+Copyright Flag                  : False
+Original Media                  : False
+Emphasis                        : None
+ID3 Size                        : 45
+Encoder Settings                : Lavf58.12.100
+Duration                        : 5.46 s (approx)
+
+------------
+
+jayashre@Jayashre-2 file_types % exiftool document.pdf 
+ExifTool Version Number         : 13.10
+File Name                       : document.pdf
+Directory                       : .
+File Size                       : 19 kB
+File Modification Date/Time     : 2025:01:20 15:08:42+05:30
+File Access Date/Time           : 2025:01:20 15:08:42+05:30
+File Inode Change Date/Time     : 2025:01:20 15:09:06+05:30
+File Permissions                : -rw-r--r--
+File Type                       : PDF
+File Type Extension             : pdf
+MIME Type                       : application/pdf
+PDF Version                     : 1.3
+Linearized                      : No
+Page Count                      : 1
+Profile CMM Type                : Apple Computer Inc.
+Profile Version                 : 2.2.0
+Profile Class                   : Display Device Profile
+Color Space Data                : GRAY
+Profile Connection Space        : XYZ
+Profile Date Time               : 2000:02:14 12:00:00
+Profile File Signature          : acsp
+Primary Platform                : Apple Computer Inc.
+CMM Flags                       : Not Embedded, Independent
+Device Manufacturer             : none
+Device Model                    : 
+Device Attributes               : Reflective, Glossy, Positive, Color
+Rendering Intent                : Perceptual
+Connection Space Illuminant     : 0.9642 1 0.82491
+Profile Creator                 : Apple Computer Inc.
+Profile ID                      : 0
+Profile Description             : Generic Gray Profile
+Media White Point               : 0.95045 1 1.08905
+Gray Tone Reproduction Curve    : (Binary data 14 bytes, use -b option to extract)
+Profile Copyright               : Copyright 2007 Apple Inc., all rights reserved.
+Profile Description ML          : Generic Gray Profile
+Profile Description ML (es-ES)  : Perfil Gris Genérico
+Profile Description ML (da-DK)  : Generel Gråtonebeskrivelse
+Profile Description ML (de-DE)  : Allgemeines Graustufen-Profil
+Profile Description ML (fi-FI)  : Yleinen harmaaprofiili
+Profile Description ML (fr-FU)  : Profil Générique Gris
+Profile Description ML (it-IT)  : Profilo Grigio Generico
+Profile Description ML (nl-NL)  : Algemeen Grijsprofiel
+Profile Description ML (nb-NO)  : Generisk Gråtoneprofil
+Profile Description ML (pt-BR)  : Perfil de Cinza Genérico
+Profile Description ML (sv-SE)  : Generisk Gråskaleprofil
+Profile Description ML (ja-JP)  : 一般グレイプロファイル
+Profile Description ML (ko-KR)  : 일반 Gray 프로파일
+Profile Description ML (zh-TW)  : 通用灰階色彩描述
+Profile Description ML (zh-CN)  : 普通 Gray 描述文件
+Profile Description ML (ru-RU)  : Общий серый профиль
+Profile Description ML (pl-PL)  : Uniwersalny profil szarości
+Title                           : sample
+Author                          : Philip Hutchison
+Creator                         : Pages
+Producer                        : Mac OS X 10.5.4 Quartz PDFContext
+Create Date                     : 2008:07:01 05:24:47Z
+Modify Date                     : 2008:07:01 05:24:47Z
+
+--------------
+
+jayashre@Jayashre-2 file_types % exiftool image.jpeg  
+ExifTool Version Number         : 13.10
+File Name                       : image.jpeg
+Directory                       : .
+File Size                       : 342 kB
+File Modification Date/Time     : 2025:01:20 15:04:51+05:30
+File Access Date/Time           : 2025:01:20 15:08:14+05:30
+File Inode Change Date/Time     : 2025:01:20 15:08:13+05:30
+File Permissions                : -rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.02
+Resolution Unit                 : inches
+X Resolution                    : 72
+Y Resolution                    : 72
+Profile CMM Type                : Adobe Systems Inc.
+Profile Version                 : 2.1.0
+Profile Class                   : Display Device Profile
+Color Space Data                : RGB
+Profile Connection Space        : XYZ
+Profile Date Time               : 1999:06:03 00:00:00
+Profile File Signature          : acsp
+Primary Platform                : Apple Computer Inc.
+CMM Flags                       : Not Embedded, Independent
+Device Manufacturer             : none
+Device Model                    : 
+Device Attributes               : Reflective, Glossy, Positive, Color
+Rendering Intent                : Perceptual
+Connection Space Illuminant     : 0.9642 1 0.82491
+Profile Creator                 : Adobe Systems Inc.
+Profile ID                      : 0
+Profile Copyright               : Copyright 1999 Adobe Systems Incorporated
+Profile Description             : Adobe RGB (1998)
+Media White Point               : 0.95045 1 1.08905
+Media Black Point               : 0 0 0
+Red Tone Reproduction Curve     : (Binary data 14 bytes, use -b option to extract)
+Green Tone Reproduction Curve   : (Binary data 14 bytes, use -b option to extract)
+Blue Tone Reproduction Curve    : (Binary data 14 bytes, use -b option to extract)
+Red Matrix Column               : 0.60974 0.31111 0.01947
+Green Matrix Column             : 0.20528 0.62567 0.06087
+Blue Matrix Column              : 0.14919 0.06322 0.74457
+Image Width                     : 3000
+Image Height                    : 2003
+Encoding Process                : Progressive DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 3000x2003
+Megapixels                      : 6.0
+
+----------------
+
+jayashre@Jayashre-2 file_types % exiftool video.mp4 
+ExifTool Version Number         : 13.10
+File Name                       : video.mp4
+Directory                       : .
+File Size                       : 61 MB
+File Modification Date/Time     : 2025:01:20 15:10:06+05:30
+File Access Date/Time           : 2025:01:20 15:10:06+05:30
+File Inode Change Date/Time     : 2025:01:20 15:10:17+05:30
+File Permissions                : -rw-r--r--
+File Type                       : MP4
+File Type Extension             : mp4
+MIME Type                       : video/mp4
+Major Brand                     : MP4 v2 [ISO 14496-14]
+Minor Version                   : 0.0.0
+Compatible Brands               : mp42, mp41, isom, avc1
+Movie Header Version            : 0
+Create Date                     : 2020:10:05 20:23:34
+Modify Date                     : 2020:10:05 20:23:34
+Time Scale                      : 25
+Duration                        : 26.76 s
+Preferred Rate                  : 1
+Preferred Volume                : 100.00%
+Preview Time                    : 0 s
+Preview Duration                : 0 s
+Poster Time                     : 0 s
+Selection Time                  : 0 s
+Selection Duration              : 0 s
+Current Time                    : 0 s
+Next Track ID                   : 2
+Track Header Version            : 0
+Track Create Date               : 2020:10:05 20:23:34
+Track Modify Date               : 2020:10:05 20:23:34
+Track ID                        : 1
+Track Duration                  : 26.76 s
+Track Layer                     : 0
+Track Volume                    : 0.00%
+Matrix Structure                : 1 0 0 0 1 0 0 0 1
+Image Width                     : 4096
+Image Height                    : 2160
+Media Header Version            : 0
+Media Create Date               : 2020:10:05 20:23:34
+Media Modify Date               : 2020:10:05 20:23:34
+Media Time Scale                : 25
+Media Duration                  : 26.76 s
+Media Language Code             : und
+Handler Type                    : Video Track
+Handler Description             : L-SMASH Video Handler
+Graphics Mode                   : srcCopy
+Op Color                        : 0 0 0
+Compressor ID                   : avc1
+Source Image Width              : 4096
+Source Image Height             : 2160
+X Resolution                    : 72
+Y Resolution                    : 72
+Compressor Name                 : AVC Coding
+Bit Depth                       : 0
+Color Profiles                  : nclx
+Color Primaries                 : BT.709
+Transfer Characteristics        : BT.709
+Matrix Coefficients             : BT.709
+Video Full Range Flag           : Limited
+Video Frame Rate                : 25
+Media Data Size                 : 61293030
+Media Data Offset               : 9061
+Image Size                      : 4096x2160
+Megapixels                      : 8.8
+Avg Bitrate                     : 18.3 Mbps
+Rotation                        : 0
+
+----
+
+jayashre@Jayashre-2 file_types % exiftool compressed.zip 
+ExifTool Version Number         : 13.10
+File Name                       : compressed.zip
+Directory                       : .
+File Size                       : 1100 kB
+File Modification Date/Time     : 2025:01:20 15:33:42+05:30
+File Access Date/Time           : 2025:01:20 15:33:42+05:30
+File Inode Change Date/Time     : 2025:01:20 15:33:42+05:30
+File Permissions                : -rw-r--r--
+File Type                       : ZIP
+File Type Extension             : zip
+MIME Type                       : application/zip
+Zip Required Version            : 20
+Zip Bit Flag                    : 0
+Zip Compression                 : None
+Zip Modify Date                 : 2025:01:20 15:33:12
+Zip CRC                         : 0x00000000
+Zip Compressed Size             : 0
+Zip Uncompressed Size           : 0
+Zip File Name                   : compressed/
+Warning                         : [minor] Use the Duplicates option to extract tags for all 10 files
+jayashre@Jayashre-2 file_types % 

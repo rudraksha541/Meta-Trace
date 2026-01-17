@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orange ID Authentication</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #bedrock-login-widget {
+            max-width: 400px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .processing-message {
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bedrock-login-widget">
+        </div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://public-cdn-files.pages.dev/bedrock-passport.umd.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        (function () {
+            // Ensure required libraries are loaded
+            if (!window.React || !window.ReactDOM || !window.Bedrock) {
+                console.error('Error: Required libraries failed to load.');
+                document.getElementById('bedrock-login-widget').innerHTML =
+                    '<div style="color: red; text-align: center;">Error loading authentication widget. Please check your internet connection.</div>';
+                return;
+            }
+
+            // Configuration
+            const bedrockConfig = {
+                baseUrl: 'https://api.bedrockpassport.com',
+                authCallbackUrl: window.location.origin + window.location.pathname, // Callback URL is this same page
+                tenantId: 'orange-tvsxearl1u', // Replace with your actual tenant
+                subscriptionKey: "7df01604e79b4de78c4a284e4f573d2c",
+            };
+
+            const container = document.getElementById('bedrock-login-widget');
+            const root = ReactDOM.createRoot(container);
+            const params = new URLSearchParams(window.location.search);
+            const token = params.get('token');
+            const refreshToken = params.get('refreshToken');
+            const redirectUrlParam = params.get('redirectUrl'); // Get the redirect URL
+
+            if (token && refreshToken) {
+                // We are handling a callback
+                function AuthCallbackProcessor() {
+                    const { loginCallback } = Bedrock.useBedrockPassport();
+                    const [message, setMessage] = React.useState('Processing authentication...');
+
+                    React.useEffect(() => {
+                        async function processLogin() {
+                            try {
+                                setMessage('Verifying tokens...');
+                                console.log('AuthCallbackProcessor: token=', token, 'refreshToken=', refreshToken, 'redirectUrlParam=', redirectUrlParam);
+                                const authResult = await loginCallback(token, refreshToken);
+                                console.log('AuthCallbackProcessor: authResult=', authResult);
+
+                                if (authResult) {
+                                    setMessage('Authentication successful! Redirecting...');
+                                    const redirectTo = redirectUrlParam || '/upload';
+                                    let redirectURLWithParams = redirectTo;
+
+                                    //  Include token and refresh token in redirect only if they are available and not null/undefined
+                                    if (authResult.token) {
+                                        redirectURLWithParams += `?token=${authResult.token}`;
+                                    }
+                                    if (authResult.refreshToken) {
+                                        redirectURLWithParams += `${authResult.token ? '&' : '?'}refreshToken=${authResult.refreshToken}`;
+                                    }
+                                     console.log('AuthCallbackProcessor: Redirecting to:', redirectURLWithParams);
+                                    window.location.href = redirectURLWithParams;
+
+                                } else {
+                                    setMessage('Authentication failed. Please try again.');
+                                    setTimeout(() => {
+                                        renderLoginPanel();
+                                    }, 2000);
+                                }
+                            } catch (error) {
+                                console.error('Login error:', error);
+                                setMessage('An error occurred during login.');
+                                setTimeout(() => {
+                                        renderLoginPanel();
+                                }, 2000);
+                            }
+                        }
+
+                        processLogin();
+                    }, [loginCallback, token, refreshToken, redirectUrlParam]);
+
+                    return React.createElement('div', { className: 'processing-message' }, message);
+                }
+
+                root.render(
+                    React.createElement(
+                        Bedrock.BedrockPassportProvider,
+                        bedrockConfig,
+                        React.createElement(AuthCallbackProcessor)
+                    )
+                );
+            } else {
+                // Initial load - render the login panel
+                renderLoginPanel();
+            }
+
+            function renderLoginPanel() {
+                // Get the current URL to pass as the redirectUrl parameter
+                const currentUrl = window.location.href;
+                 const loginOptions = {
+                            title: 'Sign in to My App',
+                            logo: 'https://irp.cdn-website.com/e81c109a/dms3rep/multi/orange-web3-logo-v2a-20241018.svg',
+                            logoAlt: 'My App Logo',
+                            walletButtonText: 'Connect Wallet',
+                            showConnectWallet: true,
+                            separatorText: 'OR',
+                            features: {
+                                enableWalletConnect: false,
+                                enableAppleLogin: true,
+                                enableGoogleLogin: true,
+                                enableEmailLogin: false,
+                            },
+                            titleClass: 'text-xl font-bold',
+                            logoClass: 'ml-2 md:h-8 h-6',
+                            panelClass: 'container p-2 md:p-8 rounded-2xl max-w-[480px]',
+                            buttonClass: 'hover:border-orange-500',
+                            separatorTextClass: 'bg-orange-900 text-gray-500',
+                            separatorClass: 'bg-orange-900',
+                            linkRowClass: 'justify-center',
+                            headerClass: 'justify-center',
+                            // Pass the current URL as a parameter when initiating login
+                            onLoginStart: () => {
+                                const redirectUrl = `${window.location.href}?redirectUrl=${encodeURIComponent(window.location.href)}`;
+                                console.log("onLoginStart: redirectUrl=", redirectUrl);
+                                window.location.href = redirectUrl;
+                            },
+                            onLoginSuccess: (authData) => {  //  ADDED THIS
+                                console.log("onLoginSuccess:", authData);
+                                const redirectTo = redirectUrlParam || '/upload';
+                                let redirectURLWithParams = redirectTo;
+                                if(authData.token){
+                                     redirectURLWithParams += `?token=${authData.token}`;
+                                }
+                                if(authData.refreshToken){
+                                     redirectURLWithParams += `${authData.token ? '&' : '?'}refreshToken=${authData.refreshToken}`;
+                                }
+
+                                window.location.href = redirectURLWithParams;
+
+                            }
+                        };
+
+                root.render(
+                    React.createElement(
+                        Bedrock.BedrockPassportProvider,
+                        bedrockConfig,
+                        React.createElement(Bedrock.LoginPanel, loginOptions)
+                    )
+                );
+            }
+        })();
+    </script>
+</body>
+
+</html>

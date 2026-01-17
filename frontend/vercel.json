@@ -1,0 +1,9 @@
+{
+    "functions": {
+      "pages/api/upload": {
+        "maxDuration": 10,
+        "memory": 256
+      }
+    }
+  }
+  

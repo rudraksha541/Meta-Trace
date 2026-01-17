@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1aff;
+  --white: #ffffffff;
+  --eerie-black-one: #1a1a1aff;
+  --coquelicot-one: #fc4b22ff;
+  --jonquil-one: #ffd028ff;
+  --silver: #bcbcbcff;
+  --davys-gray: #5e5e5eff;
+  --coquelicot-two: #f74b25ff;
+  --taupe-gray: #9a999aff;
+  --eerie-black: #1b1b1cff;
+  --gold: #fad22bff;
+  --seasalt: #f7f7f7ff;
+  --eerie-black-two: #1c1c1cff;
+  --cinnabar: #ef4d31ff;
+  --jonquil-two: #f6cc31ff;
+  --emerald-two: #58c88cff;
+}
+
+.poppins {
+  font-family: var(--font-poppins);
+}
+
+.epilogue {
+  font-family: var(--font-epilogue);
+}
